@@ -16,3 +16,5 @@ apps/
 *.log
 chromeDriver
 .tmp
+.artifacts
+package-lock.js
