@@ -5,7 +5,7 @@ const { config } = require('./wdio.shared.conf');
 // Specs
 // ============
 config.specs = [
-    './tests/specs/**/app.forms.spec.js',
+    './tests/specs/**/*.spec.js',
 ];
 
 // ============
@@ -33,7 +33,7 @@ config.capabilities = [
         'appium:appPackage': `com.zipari.fallon.sit`,
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
-        'appium:noReset': true,
+        'appium:noReset': false,
         'appium:newCommandTimeout': 240,
     },
 ];

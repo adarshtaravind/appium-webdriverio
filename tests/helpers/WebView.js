@@ -37,8 +37,8 @@ class WebView {
      *
      * @param {string} context should be native of webview
      */
-    switchToContext (context) {
-        driver.switchContext(this.getCurrentContexts()[context === CONTEXT_REF.WEBVIEW ? 1 : 0]);
+    async switchToContext (context) {
+        await driver.switchContext(context);
     }
 
     /**
@@ -46,7 +46,7 @@ class WebView {
      *
      * @return {object} An object containing the list of all available contexts
      */
-    getCurrentContexts () {
+    async getCurrentContexts () {
         return driver.getContexts();
     }
 
