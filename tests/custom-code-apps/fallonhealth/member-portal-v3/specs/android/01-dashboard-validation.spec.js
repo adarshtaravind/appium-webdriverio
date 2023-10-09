@@ -1,6 +1,6 @@
 
-import webViewScreen from '../pageobjects/webview-screen';
-import preLoginPage from '../pageobjects/pre-login-page';
+import webViewScreen from '../../page-objects/webview-screen';
+import preLoginPage from '../../page-objects/pre-login-page';
 
 let a;
 

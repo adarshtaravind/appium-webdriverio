@@ -1,11 +1,10 @@
-const { join } = require('path');
-const { config } = require('./wdio.shared.conf');
+const { config } = require('./wdio-shared.conf');
 
 // ============
 // Specs
 // ============
 config.specs = [
-    './tests/specs/**/*.spec.js',
+    './tests/specs/**/browser*.spec.js',
 ];
 
 // ============
@@ -17,24 +16,23 @@ config.capabilities = [
     {
         // The defaults you need to have in your config
         platformName: 'Android',
+        browserName: 'chrome',
         maxInstances: 1,
         // For W3C the appium capabilities need to have an extension prefix
         // http://appium.io/docs/en/writing-running-appium/caps/
         // This is `appium:` for all Appium Capabilities which can be found here
-        'appium:deviceName': 'Pixel_4A_34',
-        'appium:platformVersion': '14.0',
+        'appium:deviceName': 'Pixel_8.1',
+        'appium:platformVersion': '8.1',
         'appium:orientation': 'PORTRAIT',
         // `automationName` will be mandatory, see
         // https://github.com/appium/appium/releases/tag/v1.13.0
         'appium:automationName': 'UiAutomator2',
-        // The path to the app
-        'appium:app': join(process.cwd(), './apps/fallon-sit-debug.apk'),
-        'appium:appActivity': 'com.zipari.product.v3.V3SplashActivity',
-        'appium:appPackage': `com.zipari.fallon.sit`,
-        // Read the reset strategies very well, they differ per platform, see
-        // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
-        'appium:noReset': false,
         'appium:newCommandTimeout': 240,
+        'goog:chromeOptions': {
+            w3c: true,
+            // Add this option to prevent the annoying "Welcome"-message
+            args: ['--no-first-run'],
+        },
     },
 ];
 

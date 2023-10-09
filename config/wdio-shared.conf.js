@@ -1,9 +1,12 @@
+let getSpecList = require('./imports/get-spec-list');
+const parameters = require('../tests/.artifacts/parameters.json');
 exports.config = {
     // ====================
     // Runner and framework
     // Configuration
     // ====================
     runner: 'local',
+	specs: [getSpecList(parameters.spec, parameters.directoryMapping)],
     framework: 'jasmine',
     jasmineNodeOpts: {
         // Updated the timeout to 30 seconds due to possible longer appium calls

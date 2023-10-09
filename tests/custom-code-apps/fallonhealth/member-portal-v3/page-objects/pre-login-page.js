@@ -1,6 +1,5 @@
 import Page from './common';
-import webViewScreen from '../pageobjects/webview-screen';
-import { CONTEXT_REF } from '../helpers/WebView';
+import webViewScreen from './webview-screen';
 
 
 class FormPage extends Page {

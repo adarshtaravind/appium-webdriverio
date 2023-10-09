@@ -1,4 +1,4 @@
-import WebView from '../helpers/WebView';
+import WebView from '../../../../helpers/WebView';
 
 const SELECTORS = {
     WEB_VIEW_SCREEN: browser.isAndroid
