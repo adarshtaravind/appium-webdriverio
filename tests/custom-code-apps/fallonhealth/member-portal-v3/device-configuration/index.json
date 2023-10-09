@@ -1,0 +1,34 @@
+{
+	"android": {
+		"deviceName": "Pixel_4A_34",
+		"platformVersion": "14.0",
+		"orientation": "PORTRAIT",
+		"appPackage": "com.zipari.fallon.sit",
+		"appActivity": "com.zipari.product.v3.V3SplashActivity",
+		"noReset": "false",
+		"app": "apps/fallon-sit-debug.apk"
+	},
+	"ios": {
+		"deviceName": "iPhone 13 Pro",
+		"platformVersion": "15.5",
+		"orientation": "PORTRAIT",
+		"noReset": "true",
+		"app": "https://d3bgf4y6nbjwg6.cloudfront.net/504064/2e2df6eba36d5adac4540a4786230816c2398380/DEVDemoCare.ipa?Expires=1649144758&Signature=tyiILyRLK7QofjO4h~6WZn0uimNikytyatubp8idcpwWuSz5ZPVlZaMJL8dGd4GpwRq~NI8SGY6OKJU~GeE5uDORULVI8XPqYkGDnT5hdjfSxyoboRtDgLIZSRTUmY9jik6xY~4f8YyMU03b~BqhWEYJln9Wjs6zTG0mNnD-g5iFIf22ynm4E76hmytRLLq0uDpIX63R4Cm1Zn6UXZnbmtl1EiFZQjpBtBsM7TWRBq-2oC9eprO-aYCvp3PMJmKFAYwZV76-otOg7Wo1rv0NA8rfHDCMF0ZqO1gFhVDx-y5wMGYAZrqDGOMuPZothwZ-7u7E5HRsMoVXOcn603rvZw__&Key-Pair-Id=APKAJDAVK62MXPWVNZKA"
+	},
+	"android_bs": {
+		"deviceName": "Google Pixel 3",
+		"platformVersion": "10.0",
+		"orientation": "PORTRAIT",
+		"noReset": "true",
+		"app": "bs://9c9abcb330170c5ddb0c1d77a22d2d93f4b8e7e2",
+		"os": "android"
+	},
+	"ios_bs": {
+		"deviceName": "iPhone XS",
+		"platformVersion": "14",
+		"orientation": "PORTRAIT",
+		"noReset": "true",
+		"app": "bs://f813457c438e48cb943e9ad40623d54922cd6844",
+		"os": "ios"
+	}
+}

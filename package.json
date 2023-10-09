@@ -1,0 +1,33 @@
+{
+  "name": "appium-tests",
+  "version": "5.3.1",
+  "description": "Framework for mobile app automation using appium WDIO",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdriverio/appium-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "Adarsh Aravind",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.19.7",
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/register": "^7.17.7",
+    "@types/unzip": "^0.1.1",
+    "@wdio/allure-reporter": "^7.19.1",
+    "@wdio/appium-service": "^7.19.5",
+    "@wdio/browserstack-service": "^7.19.7",
+    "@wdio/jasmine-framework": "^7.19.0",
+    "@wdio/local-runner": "^7.19.7",
+    "@wdio/spec-reporter": "^7.19.7",
+    "eslint": "7.32.0",
+    "eslint-plugin-wdio": "^7.19.0",
+    "grunt": "^1.4.1",
+    "jasmine-spec-reporter": "^7.0.0",
+    "webpack": "^5.72.0"
+  }
+}
