@@ -9,14 +9,15 @@
     "type": "git",
     "url": "git+https://github.com/webdriverio/appium-boilerplate.git"
   },
+  "dependencies": {
+	},
   "keywords": [],
   "author": "Adarsh Aravind",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.19.7",
-    "@babel/core": "^7.17.8",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/register": "^7.17.7",
+    "@babel/cli": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.4",
     "@types/unzip": "^0.1.1",
     "@wdio/allure-reporter": "^7.19.1",
     "@wdio/appium-service": "^7.19.5",
@@ -28,6 +29,7 @@
     "eslint-plugin-wdio": "^7.19.0",
     "grunt": "^1.4.1",
     "jasmine-spec-reporter": "^7.0.0",
-    "webpack": "^5.72.0"
+    "webpack": "^5.72.0",
+    "@wdio/cli": "^7.19.7"
   }
 }
