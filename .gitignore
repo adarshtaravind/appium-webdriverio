@@ -17,4 +17,4 @@ apps/
 chromeDriver
 .tmp
 .artifacts
-package-lock.js
+package-lock.json

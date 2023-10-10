@@ -9,11 +9,11 @@
 		"app": "apps/fallon-sit-debug.apk"
 	},
 	"ios": {
-		"deviceName": "iPhone 13 Pro",
-		"platformVersion": "15.5",
+		"deviceName": "iPhone 12 Pro Max",
+		"platformVersion": "16.2",
 		"orientation": "PORTRAIT",
-		"noReset": "true",
-		"app": "https://d3bgf4y6nbjwg6.cloudfront.net/504064/2e2df6eba36d5adac4540a4786230816c2398380/DEVDemoCare.ipa?Expires=1649144758&Signature=tyiILyRLK7QofjO4h~6WZn0uimNikytyatubp8idcpwWuSz5ZPVlZaMJL8dGd4GpwRq~NI8SGY6OKJU~GeE5uDORULVI8XPqYkGDnT5hdjfSxyoboRtDgLIZSRTUmY9jik6xY~4f8YyMU03b~BqhWEYJln9Wjs6zTG0mNnD-g5iFIf22ynm4E76hmytRLLq0uDpIX63R4Cm1Zn6UXZnbmtl1EiFZQjpBtBsM7TWRBq-2oC9eprO-aYCvp3PMJmKFAYwZV76-otOg7Wo1rv0NA8rfHDCMF0ZqO1gFhVDx-y5wMGYAZrqDGOMuPZothwZ-7u7E5HRsMoVXOcn603rvZw__&Key-Pair-Id=APKAJDAVK62MXPWVNZKA"
+		"noReset": "false",
+		"app": "apps/SIT-Fallon.app"
 	},
 	"android_bs": {
 		"deviceName": "Google Pixel 3",
