@@ -1,7 +1,9 @@
+const params = require('../../../../.artifacts/parameters.json');
+let android = params.platform.includes('android') ? true : false;
 import WebView from '../../../../helpers/WebView';
 
 const SELECTORS = {
-    WEB_VIEW_SCREEN: browser.isAndroid
+    WEB_VIEW_SCREEN: android
         ? '*//android.webkit.WebView'
         : '*//XCUIElementTypeWebView',
 };

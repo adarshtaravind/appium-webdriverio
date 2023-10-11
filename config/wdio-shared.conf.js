@@ -1,5 +1,6 @@
 let getSpecList = require('./imports/get-spec-list');
 const parameters = require('../tests/.artifacts/parameters.json');
+const browserstack = require('browserstack-local');
 exports.config = {
     // ====================
     // Runner and framework
@@ -28,7 +29,7 @@ exports.config = {
     bail: 0,
     baseUrl: 'http://the-internet.herokuapp.com',
     waitforTimeout: 50000,
-    connectionRetryTimeout: 90000,
+    connectionRetryTimeout: 180000,
     connectionRetryCount: 3,
     reporters: ['spec'],
 
