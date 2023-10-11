@@ -30,7 +30,7 @@ class FormPage extends Page {
     async clickSubmitButton() {
         await this.$submitButton().click();
         await webViewScreen.switchToContext('NATIVE_APP');
-		await this.$secondaryAuthenticationHeader().waitForDisplayed({timeout: 30000, timeoutMsg: 'Failed waiting for app screen to be loaded'});
+		await this.$secondaryAuthenticationHeader().waitForDisplayed({timeout: 30000, timeoutMsg: 'Failed waiting completing login activity'});
 	}
 }
 
