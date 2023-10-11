@@ -38,21 +38,9 @@ let cliArguments = [
 		defaultValue: '',
 	},
 	{
-		keyName: 'video',
-		shortKeyName: 'vd',
-		description: 'Video recording flag (onFailure,full)',
-		defaultValue: false,
-	},
-	{
 		keyName: 'debugger',
 		shortKeyName: 'dbg',
 		description: 'Pass true to call debugger on test failure, Note: Make sure the script is running in debug terminal',
-		defaultValue: false,
-	},
-	{
-		keyName: 'savenetwork',
-		shortKeyName: 'sn',
-		description: 'Pass true to log network requests as network.log under artifacts folder',
 		defaultValue: false,
 	},
 	{

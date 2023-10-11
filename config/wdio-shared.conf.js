@@ -28,7 +28,7 @@ exports.config = {
     bail: 0,
     baseUrl: 'http://the-internet.herokuapp.com',
     waitforTimeout: 50000,
-    connectionRetryTimeout: 90000,
+    connectionRetryTimeout: 180000,
     connectionRetryCount: 3,
     reporters: ['spec'],
 
