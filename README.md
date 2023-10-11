@@ -1,55 +1,37 @@
-# appium-boilerplate
+# WebDriver IO Appium Automation
 
-> **NOTE:**
-> This boilerplate is for Webdriver V6, if you need a boilerplate for:\
-> - V5 please click [here](https://github.com/webdriverio/appium-boilerplate/tree/v5)
-> - V4 please click [here](https://github.com/webdriverio/appium-boilerplate/tree/v4)
+This project to run Appium tests together with WebdriverIO for:
 
-Boilerplate project to run Appium tests together with WebdriverIO for:
-
-- iOS/Android Native Apps
-- iOS/Android Hybrid Apps
-- Android Chrome and iOS Safari browser ([check here](./README.md#automating-chrome-or-safari))
-
-> This boilerplate uses the WebdriverIO native demo app which can be found [here](https://github.com/webdriverio/native-demo-app).
-> The releases can be found and downloaded [here](https://github.com/webdriverio/native-demo-app/releases).
-> Before running tests, please create a `./apps` directory, download the app and move the zip files into that directory
-
-> **Note:**
-> This boilerplate only handles local execution on 1 em/simulator at a time, not parallel execution. For more info about that Google on setting up a grid with Appium.
-
-![webdriverio-demo-app-ios.ios](./docs/assets/appium-tests.gif)
+-   iOS/Android Native Apps
+-   iOS/Android Hybrid Apps
 
 ## Based on
-This boilerplate is currently based on:
-- **WebdriverIO:** `6.##.#`
-- **Appium:** `1.15.#`
 
+This Framework is currently based on:
+
+-   **WebdriverIO:** `7.##.#`
+-   **Appium:** `2.#` we are using the beta version of appium 2 while developing this framework.
 
 ## Installing Appium on a local machine
+
 See [Installing Appium on a local machine](./docs/APPIUM.md)
 
 ## Setting up Android and iOS on a local machine
+
 To setup your local machine to use an Android emulator and an iOS simulator see [Setting up Android and iOS on a local machine](./docs/ANDROID_IOS_SETUP.md)
 
 ## Quick start
-Choose one of the following options:
 
-1. Clone the git repo — `git clone https://github.com/webdriverio/appium-boilerplate.git`
-
-2. Then copy the files to your project directory (all files in `/tests` and the `wdio.conf`-files in the `config`-folder)
-
-3. Merge project dev dependencies with your projects dev dependencies in your `package.json`
-
-4. merge the scripts to your `package.json` scripts
-
-5. Run the tests for iOS with `npm run ios.app` and for Android with `npm run android.app`
+1. Clone the git repo — `git clone https://gitlab.zipari.net/zta/appium-tests.git`
+1. Install the dependencies — `npm install`
 
 ## Config
-This boilerplate uses a specific config for iOS and Android, see [configs](./config/) and are based on `wdio.shared.conf.js`.
+
+This Framework uses a specific config for iOS and Android, see [configs](tests/config) and are based on `wdio-shared.conf.js`.
 This shared config holds all the defaults so the iOS and Android configs only need to hold the capabilities and specs that are needed for running on iOS and or Android (app or browser).
 
-Since we do not have Appium installed as part of this package, this has been configured to use the global Appium installation. This is configured in wdio.shared.conf.js
+Since we do not have Appium installed as part of this package, this has been configured to use the global Appium installation. This is configured in wdio-shared.conf.js
+
 ```
     // ====================
     // Appium Configuration
@@ -71,72 +53,107 @@ Since we do not have Appium installed as part of this package, this has been con
 ```
 
 ## Locator strategy for native apps
+
 The locator strategy for this boilerplate is to use `accessibilityID`'s, see also the [WebdriverIO docs](http://webdriver.io/guide/usage/selectors.html#Accessibility-ID) or this newsletter on [AppiumPro](https://appiumpro.com/editions/20).
 `accessibilityID`'s make it easy to script once and run on iOS and Android because most of the apps already have some `accessibilityID`'s.
 
-If `accessibilityID`'s can't be used and for example only XPATH is only available then the following setup could be used to make cross-platform selectors
+## Setting up Node and NPM using NVM
 
-```js
-const SELECTORS = {
-    WEB_VIEW_SCREEN: browser.isAndroid
-        ? '*//android.webkit.WebView'
-        : '*//XCUIElementTypeWebView',
-};
+Please make sure to install Node v16 and not the latest version Node v17 as that is not compatible as of now with WebdriverIO & Appium.
+
+We can use the help of NVM to switch between Node versions. Refer [here](https://github.com/nvm-sh/nvm).
+
+## Setting up JAVA_HOME
+
+https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/
+
+# Environment variable
+
+Open the Environment Variable file:
+vim ~/.zshenv
+
+# Add the environment variables:
+
+-   export ANDROID_HOME=/Users/username/Library/Android/sdk/
+-   export PATH=$ANDROID_HOME/platform-tools:$PATH
+-   export PATH=$ANDROID_HOME/tools:$PATH
+
+# Source the changes:
+
+source ~/.zshenv
+
+# Test changes:
+
+echo $ANDROID_HOME
+adb devices - should return list of devices attached
+
+-   Note: the same changes can be added to .zshrc or .bashprofile file as well
+
+## Appium selector Guide
+
+-   [WebdriverIO UI Automator Selector](https://webdriver.io/docs/selectors/#android-uiautomator)
+-   [Android Developer UI Selector Docs](https://appium.io/docs/en/writing-running-appium/android/uiautomator-uiselector/)
+-   [Appium UiSelector Guide](https://developer.android.com/reference/androidx/test/uiautomator/UiSelector)
+
+## Scrolling
+
+UiScrollable is a UiCollection and provides support for searching for items in scrollable layout elements. This class can be used with horizontally or vertically scrollable controls.
+
+[Ui scrollable](https://developer.android.com/reference/androidx/test/uiautomator/UiScrollable)
+
+# Appium Drivers Installation
+
+`appium driver install xcuitest` driver for iOS
+
+`appium driver install uiautomator2` driver for Android
+
+Now to verify if its been installed, you can run - `appium driver list`
+
+# Config files
+
+-   The config files are located in (tests/config) in reference to the root directory.
+-   The shared config is for the common configs that are used across the test suites.
+-   There are few more configurable configs that are specific to the OS (Android, iOS, BrowserStack).
+
+# Test Execution using grunt
+
+-   grunt task runner is used to execute the test suites. you can pass the desired run parameters in the command line. `grunt` will execute the default task in android.
+-   To know about the available grunt parameters, run `grunt -doc`.
+-   Run `grunt` to verify tests can be started successfully
+    -To see a list of parameters available for the task prepend it with `-doc` flag and run it. For example, `grunt -doc`.
+
+## package.json
+
+3.1. Package.json file:
+
+-   includes general information about project (name, version, contributors)
+-   lists the NPM packages the project depends on
+-   has list of aliases used (for more info see [Aliases](#aliases))
+-   predefined custom command-line scripts
+
+## .gitignore
+
+4.1. .gitignore file lists files that are being ignored by git. This may include IDE related files and configurations, .DS-Store files (MacOS specific files), the folder with dependencies (since they just need to be installed locally) etc.
+
+4.2. .gitignore can be configured by providing rules. Rules may use absolute path, i.e. `/node_modules/` - will ignore node_modules folder located in the root directory. It may use file names - `.DS_Store`. And exceptions of the rules can be specified using exclamation mark
+
+```
+/node_modules/
+!/node_modules/my-custom-module
 ```
 
-## Automating Chrome or Safari
-Mobile web automation is almost the same as writing tests for desktop browsers. The only difference can be found in the configuration that needs to be used.
-Click [here](./config/wdio.ios.browser.conf.js) to find the config for iOS Safari and [here](./config/wdio.android.browser.conf.js) for Android Chrome.
-For Android be sure that the lastest version of Chrome is installed, see also [here](./docs/FAQ.md#i-get-the-error-no-chromedriver-found-that-can-automate-chrome-).
+4.3. Use of comments in .gitignore file is required for explanation of what is being ignored and why. Comment lines start with `#`
 
-For this boilerplate the testcases from the [jasmine-boilerplate](https://github.com/webdriverio/jasmine-boilerplate), created by [Christian Bromann](https://github.com/christian-bromann), are used.
+# Allure Reporter
 
-## Cloud vendors
-
-### Sauce Labs Real Device Cloud
-This boilerplate now also provides a setup for testing with the Real Device Cloud (RDC) of Sauce Labs. Please check the [SauceLabs](./config/saucelabs)-folder to see the setup for iOS and Android.
-
-> With the latest version of WebdriverIO (`5.4.13` and higher) the iOS and Android config holds:
-> - automatic US or EU RDC cloud selection by providing a `region` in the config, see the [iOS](./config/saucelabs/wdio.ios.rdc.app.conf.js) and the [Android](./config/saucelabs/wdio.ios.rdc.app.conf.js) configs
-> - automatic update of the teststatus in the RDC cloud without using a customer script
-
-Make sure you install the latest version of the `@wdio/sauce-service` with
-
-```shell
-$ npm install --save-dev @wdio/sauce-service
-```
-
-and add `services: ['sauce'],` to the config. If no `region` is provided it will automatically default to the US-RDC cloud.
-If you provide `region: 'us'` or `region: 'eu'` it will connect to the US or the EU RDC cloud
-
-There are 2 scripts that can be used, see the [`package.json`](./package.json), to execute the tests in the cloud:
-
-    // For iOS
-    $ npm run ios.sauce.rdc.app
-
-    // For Android
-    $ npm run android.sauce.rdc.app
-
-### BrowserStack
-
-This boilerplate provides a setup for testing with BrowserStack. Please check the [BrowserStack](./config/browserstack)-folder to see the setup for iOS and Android.
-
-Make sure you install the latest version of the `@wdio/browserstack-service` with
-
-```shell
-$ npm install --save-dev @wdio/browserstack-service
-```
-
-There are 2 scripts that can be used, see the [`package.json`](./package.json), to execute the tests in the cloud:
-
-    // For iOS
-    $ npm run ios.browserstack.app
-
-    // For Android
-    $ npm run android.browserstack.app
+-   To run command line application, **_Java Runtime Environment must be
+    installed_** in the machine .
+-   To view the report after the run simply use `npm run openReport ` in the console .The script added in the package.json will open the HTML report .
 
 ## FAQ
+
 See [FAQ](./docs/FAQ.md)
 
 ## Tips and Tricks
+
 See [Tips and Tricks](./docs/TIPS_TRICKS.md)
