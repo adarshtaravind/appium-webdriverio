@@ -1,6 +1,5 @@
 let getSpecList = require('./imports/get-spec-list');
 const parameters = require('../tests/.artifacts/parameters.json');
-const browserstack = require('browserstack-local');
 exports.config = {
     // ====================
     // Runner and framework
